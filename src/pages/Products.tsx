@@ -122,7 +122,7 @@ const Products = () => {
                   <div className="h-40 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative">
                     <span className="text-4xl">💊</span>
                     <div className="absolute top-2 right-2 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-md text-[10px] font-bold uppercase">
-                      {p.branch}
+                      Available in {p.branch}
                     </div>
                   </div>
                   <div className="p-5">
