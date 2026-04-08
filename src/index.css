@@ -105,3 +105,10 @@
     @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
   }
 }
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}

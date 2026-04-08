@@ -11,6 +11,7 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import WhatsAppFloat from "./components/whatsapp";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppFloat />
         <Footer />
       </BrowserRouter>
     </TooltipProvider>
