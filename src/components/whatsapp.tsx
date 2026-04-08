@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppFloat = () => {
-  const phoneNumber = "+923265109797"; // Replace with your primary business number
+  const phoneNumber = "+923265466394"; // Replace with your primary business number
   const message = encodeURIComponent("Hello! I have a query regarding your services.");
 
   return (

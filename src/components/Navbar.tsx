@@ -24,8 +24,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-card"
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Save Life Pharmacy" className="h-10 w-10" />
+        <Link to="/" className="flex items-center ">
+          <img src={logo} alt="Save Life Pharmacy" className="h-10 w-18" />
           <span className="font-display text-xl font-bold text-primary">
             Save Life <span className="text-accent">Pharmacy</span>
           </span>
@@ -55,7 +55,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="tel:+1234567890"
+            href="tel:+923472943510"
             className="flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />

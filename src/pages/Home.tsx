@@ -2,7 +2,10 @@ import HeroSlider from "@/components/HeroSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Heart, Shield, Clock, Truck, Star, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 const features = [
   { icon: Heart, title: "Quality Medicines", desc: "Certified and genuine pharmaceutical products" },
   { icon: Shield, title: "Licensed Pharmacy", desc: "Fully licensed and regulated pharmacy services" },
@@ -20,6 +23,8 @@ const stats = [
 const testimonials = [
   { name: "Sarah M.", text: "Save Life Pharmacy has been my go-to for years. Amazing service and genuine products!", rating: 5 },
   { name: "James K.", text: "The home delivery service is incredibly fast. Highly recommended!", rating: 5 },
+  { name: "Emily R.", text: "Friendly staff and expert pharmaceutical advice. I trust them completely.", rating: 5 },
+  { name: "Emily R.", text: "Friendly staff and expert pharmaceutical advice. I trust them completely.", rating: 5 },
   { name: "Emily R.", text: "Friendly staff and expert pharmaceutical advice. I trust them completely.", rating: 5 },
 ];
 
@@ -69,33 +74,59 @@ const Home = () => (
     </section>
 
     {/* Testimonials */}
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <AnimatedSection className="text-center mb-12">
-          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-            What Our Customers Say
-          </h2>
-        </AnimatedSection>
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <AnimatedSection key={t.name} delay={i * 0.1}>
-              <div className="glass-card rounded-2xl p-6">
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground italic">"{t.text}"</p>
-                <div className="mt-4 flex items-center gap-2">
-                  <Users className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-semibold text-foreground">{t.name}</span>
-                </div>
+<section className="py-20">
+  <div className="container mx-auto px-4">
+    
+    <AnimatedSection className="text-center mb-12">
+      <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+        What Our Customers Say
+      </h2>
+    </AnimatedSection>
+
+    <Swiper
+      modules={[Autoplay, Pagination]}
+      spaceBetween={20}
+      speed={800}
+      autoplay={{ delay: 2500, disableOnInteraction: false }}
+      breakpoints={{
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }}
+    >
+      {testimonials.map((t, i) => (
+        <SwiperSlide key={i}>
+          <AnimatedSection delay={i * 0.1}>
+            <div className="glass-card rounded-2xl p-6 h-full">
+              
+              {/* Stars */}
+              <div className="flex gap-1 mb-3">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                ))}
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </div>
-    </section>
+
+              {/* Text */}
+              <p className="text-sm text-muted-foreground italic">
+                "{t.text}"
+              </p>
+
+              {/* User */}
+              <div className="mt-4 flex items-center gap-2">
+                <Users className="h-5 w-5 text-primary" />
+                <span className="text-sm font-semibold text-foreground">
+                  {t.name}
+                </span>
+              </div>
+
+            </div>
+          </AnimatedSection>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+  </div>
+</section>
 
     {/* CTA */}
     <section className="py-20 bg-secondary">
