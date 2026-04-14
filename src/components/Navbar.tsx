@@ -26,8 +26,8 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center ">
           <img src={logo} alt="Save Life Pharmacy" className="h-10 w-18" />
-          <span className="font-display text-xl font-bold text-primary">
-            Save Life <span className="text-accent">Pharmacy</span>
+          <span className="font-display text-xl font-bold text-black">
+            <span className="ml-2">Health</span><span className=" ml-1">Beauty</span> <span className="ml-1">Care</span>
           </span>
         </Link>
 
